@@ -1,0 +1,129 @@
+/* Signal fabric diagram */
+.fabric {
+  display:grid;
+  grid-template-columns:1fr minmax(280px,420px) 1fr;
+  gap:20px;
+  align-items:center;
+  margin-top:56px
+}
+
+.col {
+  display:flex;
+  flex-direction:column;
+  gap:44px
+}
+
+.col.r {
+  align-items:flex-end
+}
+
+.node {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  width:96px;
+  color:#c9b393
+}
+
+.node div {
+  width:76px;
+  height:76px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:linear-gradient(160deg,#3a2410,#1a1008);
+  display:grid;
+  place-items:center;
+  color:var(--bl)
+}
+
+.node svg,.core svg {
+  width:32px;
+  height:32px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round
+}
+
+.core {
+  width:150px;
+  height:150px;
+  border-radius:32px;
+  margin:0 auto;
+  border:2px solid var(--cy);
+  display:grid;
+  place-items:center;
+  color:var(--cy);
+  background:#1f1309;
+  box-shadow:0 0 70px #f7931a44
+}
+
+.core svg {
+  width:90px;
+  height:90px
+}
+
+.core {
+  animation:ripple 2.6s ease-out infinite
+}
+
+.core svg path {
+  stroke-dasharray:120;
+  animation:flow 3.5s linear infinite
+}
+
+.node div {
+  animation:nodeglow 4.5s ease-in-out infinite
+}
+
+.col .node:nth-child(2) div {
+  animation-delay:1.4s
+}
+
+.col .node:nth-child(3) div {
+  animation-delay:2.8s
+}
+
+.col.r .node:nth-child(1) div {
+  animation-delay:.7s
+}
+
+.col.r .node:nth-child(2) div {
+  animation-delay:2.1s
+}
+
+.col.r .node:nth-child(3) div {
+  animation-delay:3.5s
+}
+
+.fabric {
+  position:relative
+}
+
+.col,.mid {
+  position:relative;
+  z-index:1
+}
+
+.ln {
+  position:absolute;
+  left:10%;
+  right:10%;
+  height:1px;
+  background:repeating-linear-gradient(90deg,#f7931a55 0 12px,transparent 12px 24px);
+  z-index:0
+}
+
+.ln::after {
+  content:"";
+  position:absolute;
+  top:-1px;
+  width:40px;
+  height:3px;
+  border-radius:3px;
+  background:linear-gradient(90deg,transparent,#f7931a,transparent);
+  animation:spark 2.8s linear infinite;
+  box-shadow:0 0 10px #f7931a
+}

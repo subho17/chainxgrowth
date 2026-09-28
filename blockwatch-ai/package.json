@@ -1,0 +1,9 @@
+{
+  "name": "blockwatch-ai",
+  "version": "1.0.0",
+  "description": "Blockwatch AI — the mind that reads Bitcoin",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

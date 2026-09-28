@@ -1,0 +1,39 @@
+/* Global globe section */
+.gw {
+  height:min(46vw,380px);
+  overflow:hidden;
+  position:relative;
+  margin-top:40px
+}
+
+.globe {
+  position:absolute;
+  left:50%;
+  top:0;
+  width:min(1100px,150vw);
+  aspect-ratio:1;
+  border-radius:50%;
+  transform:translateX(-50%);
+  background:radial-gradient(circle,#f7931a 1.3px,transparent 1.9px) 0 0/14px 14px,radial-gradient(circle at 50% 25%,#3a2008,#0a0704 65%);
+  animation:globe 45s linear infinite;
+  border:1px solid #f7931a99;
+  box-shadow:0 0 110px #f7931a66,inset 0 0 90px #f7931a55
+}
+
+.ping {
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ffd08a;
+  box-shadow:0 0 12px #f7931a
+}
+
+.ping::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  border:1px solid #f7931a;
+  animation:ping 2.4s ease-out infinite
+}

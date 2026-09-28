@@ -1,0 +1,229 @@
+/* Hero section: headline, status pill, spinning bitcoin coin, wave divider */
+.hero {
+  padding:72px 0 64px;
+  overflow:hidden
+}
+
+.hero .wrap {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+  align-items:center;
+  min-height:640px
+}
+
+.status {
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+  color:#d6a86a;
+  margin-bottom:34px
+}
+
+.status b {
+  font-weight:400;
+  color:#c8f3e0
+}
+
+.status b::before {
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#3ddc97;
+  margin-right:10px
+}
+
+.hero h1 {
+  font-size:clamp(40px,5.6vw,68px);
+  color:#dfe6f5
+}
+
+.hero h1 em {
+  display:block;
+  font-style:normal;
+  color:var(--cy);
+  margin-top:14px;
+  text-shadow:0 0 40px #f7931a44
+}
+
+.hero p.lead {
+  font-size:19px;
+  margin:28px 0;
+  max-width:560px;
+  color:#d3ddf2
+}
+
+.live {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:13px 22px;
+  max-width:520px;
+  margin-bottom:32px;
+  font:13px var(--mono);
+  color:#e5ecfb;
+  background:#1a1108aa
+}
+
+.live span:first-child {
+  color:#f7a33f;
+  letter-spacing:.18em;
+  font-size:11px;
+  padding-right:14px;
+  border-right:1px solid var(--line)
+}
+
+.live #t::after {
+  content:"|";
+  animation:bl 1s steps(1) infinite;
+  color:var(--cy)
+}
+
+.ctas {
+  display:flex;
+  gap:26px;
+  align-items:center;
+  flex-wrap:wrap
+}
+
+.ul {
+  border-bottom:1px solid var(--cy);
+  padding-bottom:2px
+}
+
+.orb {
+  aspect-ratio:1;
+  border-radius:50%;
+  position:relative;
+  justify-self:center;
+  width:min(100%,500px);
+
+background:radial-gradient(circle at 50% 42%,#7fe6ff 0,#2b9bd8 14%,#155a96 32%,#5a3208 52%,transparent 70%);
+  filter:saturate(1.1);
+  animation:pulse 6s ease-in-out infinite
+}
+
+.orb::before,.orb::after {
+  content:"";
+  position:absolute;
+  inset:8%;
+  border-radius:50%;
+  border:1px solid #f7931a44
+}
+
+.orb::after {
+  inset:22%;
+  border-color:#f7931a66;
+  box-shadow:0 0 60px #f7931a44 inset
+}
+
+.wave {
+  display:block;
+  width:100%;
+  height:110px;
+  margin:0 auto
+}
+
+.wave path {
+  fill:none;
+  stroke:var(--cy);
+  stroke-linecap:round;
+  filter:drop-shadow(0 0 6px var(--cy))
+}
+
+.hero .wrap>div:first-child>* {
+  animation:up .9s cubic-bezier(.2,.7,.2,1) backwards
+}
+
+.hero .wrap>div:first-child>*:nth-child(2) {
+  animation-delay:.12s
+}
+
+.hero .wrap>div:first-child>*:nth-child(3) {
+  animation-delay:.26s
+}
+
+.hero .wrap>div:first-child>*:nth-child(4) {
+  animation-delay:.4s
+}
+
+.hero .wrap>div:first-child>*:nth-child(5) {
+  animation-delay:.52s
+}
+
+.hero .wrap>div:first-child>*:nth-child(6) {
+  animation-delay:.64s
+}
+
+.hero h1 em {
+  background:linear-gradient(100deg,var(--cy) 30%,#b8f3ff 50%,var(--cy) 70%);
+  background-size:200% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shim 6s linear infinite
+}
+
+.orb {
+  animation:pulse 6s ease-in-out infinite,up 1.4s ease-out backwards;
+  transition:translate .4s ease-out
+}
+
+.orb::before {
+  border-style:dashed;
+  animation:spin 60s linear infinite
+}
+
+.orb::after {
+  animation:spin 40s linear infinite reverse;
+  border-top-color:var(--cy)
+}
+
+.wave path {
+  stroke-dasharray:260 140;
+  animation:flow 7s linear infinite
+}
+
+.wave path+path {
+  animation-duration:11s;
+  animation-direction:reverse
+}
+
+.wave {
+  transform-origin:center;
+  animation:breathe 5s ease-in-out infinite
+}
+
+.orb {
+  background:radial-gradient(circle at 50% 50%,#f7931a66 0,#7a3a0a33 38%,transparent 68%)
+}
+
+.coin {
+  position:absolute;
+  inset:26%;
+  transform-style:preserve-3d;
+  animation:coin 8s linear infinite;
+  perspective:800px
+}
+
+.coin span {
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  backface-visibility:hidden;
+  font:600 clamp(90px,15vw,190px)/1 var(--sans);
+  color:#fff3dc;
+  background:radial-gradient(circle at 35% 30%,#ffc86b,#f7931a 55%,#a35a0b);
+  border:6px solid #ffd08a;
+  box-shadow:0 0 70px #f7931aaa,inset 0 0 40px #a35a0b
+}
+
+.coin span+span {
+  transform:rotateY(180deg)
+}

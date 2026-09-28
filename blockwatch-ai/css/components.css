@@ -1,0 +1,53 @@
+/* Shared components: buttons, focus ring */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border-radius:999px;
+  padding:12px 24px;
+  font-weight:500;
+  cursor:pointer;
+  border:1px solid var(--line);
+  background:#2a1c0eaa;
+  color:#fff;
+  font:500 15px var(--sans);
+  transition:.2s
+}
+
+.btn.pri {
+  background:var(--cy);
+  color:#241200;
+  border-color:var(--cy);
+  box-shadow:0 0 30px #f7931a55
+}
+
+.btn:hover {
+  transform:translateY(-1px);
+  border-color:var(--cy)
+}
+
+:focus-visible {
+  outline:2px solid var(--cy);
+  outline-offset:3px
+}
+
+.btn.pri {
+  position:relative;
+  overflow:hidden
+}
+
+.btn.pri::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+  width:40%;
+  height:100%;
+  background:linear-gradient(100deg,transparent,#ffffff66,transparent);
+  transform:skewX(-20deg);
+  transition:left .7s
+}
+
+.btn.pri:hover::after {
+  left:130%
+}

@@ -1,0 +1,75 @@
+/* Showcase panel with chips */
+.show {
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  margin-top:48px;
+  background:var(--card)
+}
+
+.beam {
+  min-height:420px;
+  background:linear-gradient(115deg,#0a0604 30%,#a35a0b 50%,#f7931a 58%,#5a3208 68%,#0a0604 80%);
+  position:relative
+}
+
+.beam small {
+  position:absolute;
+  left:24px;
+  bottom:22px;
+  font:11px/1.6 var(--mono);
+  color:#ffd9a8;
+  max-width:160px
+}
+
+.show .body {
+  padding:44px
+}
+
+.show h3 {
+  font-size:28px;
+  margin-bottom:16px
+}
+
+.show p {
+  color:var(--mut);
+  margin-bottom:14px;
+  max-width:460px
+}
+
+.chips {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:22px
+}
+
+.chip {
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:11px 18px;
+  font-size:14px;
+  color:#d5e0f6;
+  background:#2a1b0c88;
+  cursor:pointer;
+  text-align:left;
+  font-family:var(--sans);
+  transition:.2s
+}
+
+.chip:hover,.chip.on {
+  border-color:var(--cy);
+  color:#fff;
+  box-shadow:0 0 18px #f7931a33
+}
+
+.beam {
+  background-size:200% 100%;
+  animation:shim 9s linear infinite
+}
+
+.chip.on {
+  animation:none
+}

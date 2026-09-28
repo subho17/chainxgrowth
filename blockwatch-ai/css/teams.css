@@ -1,0 +1,46 @@
+/* Audience cards with map pins */
+.grid3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:56px
+}
+
+.card ul {
+  list-style:none;
+  padding:0;
+  margin-top:14px;
+  display:grid;
+  gap:8px;
+  font-size:15px;
+  color:#c3d0ea
+}
+
+.card li::before {
+  content:"✓";
+  color:var(--cy);
+  margin-right:12px
+}
+
+.grid3 .card {
+  background:radial-gradient(circle,#f7931a26 3px,transparent 4px) 0 0/38px 38px,var(--card)
+}
+
+.pin {
+  position:absolute;
+  width:15px;
+  height:15px;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  background:var(--cy);
+  box-shadow:0 0 14px #f7931a99;
+  animation:bob 3s ease-in-out infinite
+}
+
+.pin::after {
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:50%;
+  background:#2a1600
+}

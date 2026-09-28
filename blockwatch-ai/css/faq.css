@@ -1,0 +1,76 @@
+/* FAQ accordion */
+.faq {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:64px
+}
+
+.faq h2 {
+  text-align:left
+}
+
+.faq h2 em {
+  color:var(--cy)
+}
+
+details {
+  border-top:1px solid var(--line);
+  padding:22px 0
+}
+
+details:last-child {
+  border-bottom:1px solid var(--line)
+}
+
+summary {
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  font-weight:500
+}
+
+summary::-webkit-details-marker {
+  display:none
+}
+
+summary::after {
+  content:"+";
+  width:32px;
+  height:32px;
+  flex:none;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#cfe0ff
+}
+
+details[open] summary {
+  color:var(--cy)
+}
+
+details[open] summary::after {
+  content:"×";
+  color:var(--cy);
+  border-color:var(--cy)
+}
+
+details p {
+  color:var(--mut);
+  margin-top:14px;
+  max-width:560px
+}
+
+details[open] p {
+  animation:drop .4s ease-out
+}
+
+summary::after {
+  transition:transform .3s,border-color .3s
+}
+
+details[open] summary::after {
+  transform:rotate(180deg)
+}
